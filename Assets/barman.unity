@@ -606,6 +606,7 @@ GameObject:
   - component: {fileID: 1509623929}
   - component: {fileID: 1509623928}
   - component: {fileID: 1509623927}
+  - component: {fileID: 1509623936}
   - component: {fileID: 1509623934}
   - component: {fileID: 1509623933}
   - component: {fileID: 1509623932}
@@ -782,3 +783,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakGlass: {fileID: 8300000, guid: fd2137aa43fbf724a9e72385fc228e65, type: 3}
+--- !u!114 &1509623936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1509623926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d46809ea88a33f34491a043b04018148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoaSound: {fileID: 8300000, guid: ce2259f0a5a73de49a023f3c7b60c472, type: 3}
+  OnPickUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!1 &2081498285 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 101770, guid: af2f3b6f684f78846802fe64da29bd8f, type: 2}
+  m_PrefabInternal: {fileID: 911411331}
+--- !u!65 &2081498289
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2081498285}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2037826, y: 0.8955303, z: 0.9173844}
+  m_Center: {x: 0, y: 0.44843504, z: 0.000000014901161}
