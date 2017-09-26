@@ -10,7 +10,7 @@ using System.Runtime.ConstrainedExecution;
 public class ThrowObjectWithScore : MonoBehaviour
 {
 
-	private const int TIME_MULTIPLIER = 100;
+	private const int TIME_MULTIPLIER = 10000;
 
 	public AudioClip whoaSound;
 
@@ -36,6 +36,11 @@ public class ThrowObjectWithScore : MonoBehaviour
 		textMesh.text = "No Hand Hovering";
 	}
 
+
+	void OnCollisionEnter (Collision col)
+	{
+		flying = false;
+	}
 
 	//-------------------------------------------------
 	// Called when a Hand starts hovering over this object
@@ -94,7 +99,7 @@ public class ThrowObjectWithScore : MonoBehaviour
 	{
 		if (flying) {
 			// regrab
-			textMesh.text = "+" + (TIME_MULTIPLIER * (Time.time - throwTime)).ToString ();
+			textMesh.text = "+" + (TIME_MULTIPLIER * (Time.time - throwTime)).ToString ("F0");
 			flying = false;
 		} 
 	}
