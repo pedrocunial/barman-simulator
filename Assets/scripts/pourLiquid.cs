@@ -15,6 +15,9 @@ public class pourLiquid : MonoBehaviour
     {
 
         Debug.Log(transform.rotation.eulerAngles.x);
+        Debug.Log(transform.rotation.eulerAngles.y);
+        Debug.Log(transform.rotation.eulerAngles.z);
+
         //We check if we have more than one touch happening.
         //We also check if the first touches phase is Ended (that the finger was lifted)
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == touchPhase)
