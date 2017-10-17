@@ -4083,7 +4083,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400134, guid: 9d54076f815bc1745bf5781d01854974, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 490210353}
-  m_LocalRotation: {x: 0.67554486, y: -0.007817105, z: 0.7372281, w: -0.008532236}
+  m_LocalRotation: {x: 0.6755449, y: -0.007817106, z: 0.73722816, w: -0.008532237}
   m_LocalPosition: {x: -0.033808846, y: 0.112150714, z: 0.13401042}
   m_LocalScale: {x: -1.1547998, y: -1.1548, z: -1.1547999}
   m_Children: []
@@ -9489,8 +9489,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -0.01
-  maxDistance: 0
-  finalObjective: {fileID: 0}
+  maxDistance: 2
+  goTime: 3
+  leaveTime: 6
+  finalObjective: {fileID: 1872683501}
 --- !u!65 &1118161475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11543,7 +11545,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1384840478}
-  - component: {fileID: 1384840480}
   - component: {fileID: 1384840479}
   m_Layer: 0
   m_Name: cowboy
@@ -11666,20 +11667,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00020861626, y: -0.059187233, z: 0.02262424}
     m_Extent: {x: 1.1099954, y: 1.0289197, z: 0.28298587}
   m_DirtyAABB: 0
---- !u!114 &1384840480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1384840477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6eac5494325cad48a3be80105dd51e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: -0.01
-  maxDistance: 0.2
-  finalObjective: {fileID: 2044110930}
 --- !u!1 &1393776534
 GameObject:
   m_ObjectHideFlags: 0
