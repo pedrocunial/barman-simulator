@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RaycastTest : MonoBehaviour
+public class pourLiquid : MonoBehaviour
+
 {
 
     Vector3 touchPosWorld;
@@ -10,7 +11,10 @@ public class RaycastTest : MonoBehaviour
     TouchPhase touchPhase = TouchPhase.Ended;
 
     void Update()
+
     {
+
+        Debug.Log(transform.rotation.eulerAngles.x);
         //We check if we have more than one touch happening.
         //We also check if the first touches phase is Ended (that the finger was lifted)
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == touchPhase)
