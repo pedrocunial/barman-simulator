@@ -4083,7 +4083,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400134, guid: 9d54076f815bc1745bf5781d01854974, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 490210353}
-  m_LocalRotation: {x: 0.6755449, y: -0.007817106, z: 0.73722816, w: -0.008532237}
+  m_LocalRotation: {x: 0.67554486, y: -0.007817105, z: 0.7372281, w: -0.008532236}
   m_LocalPosition: {x: -0.033808846, y: 0.112150714, z: 0.13401042}
   m_LocalScale: {x: -1.1547998, y: -1.1548, z: -1.1547999}
   m_Children: []
@@ -9493,6 +9493,7 @@ MonoBehaviour:
   goTime: 3
   leaveTime: 6
   finalObjective: {fileID: 1872683501}
+  door: {fileID: 2051975363}
 --- !u!65 &1118161475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16398,6 +16399,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.2037833, y: 0.8955303, z: 0.91738474}
   m_Center: {x: 0, y: 0.44843504, z: 0.000000014901167}
+--- !u!1 &2051975363 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1977685783311122, guid: 0f9e068e8adba47849b5ce91feffd809,
+    type: 2}
+  m_PrefabInternal: {fileID: 143136930}
 --- !u!1 &2064228323
 GameObject:
   m_ObjectHideFlags: 0
