@@ -18,34 +18,25 @@ public class pourLiquid : MonoBehaviour
         Debug.Log(transform.rotation.eulerAngles.y);
         Debug.Log(transform.rotation.eulerAngles.z);
 
-        //We check if we have more than one touch happening.
-        //We also check if the first touches phase is Ended (that the finger was lifted)
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == touchPhase)
+
+        //float x = transform.rotation.eulerAngles.x;
+        //float y = transform.rotation.eulerAngles.y;
+        //float z = transform.rotation.eulerAngles.z;
+
+        Vector3 pos = transform.rotation * Vector3.up;
+
+        GameObject particles = GameObject.Find("Particle System");
+
+        if (Vector3.Dot(Vector3.up, pos) < 0)
         {
-            //We transform the touch position into word space from screen space and store it.
-            touchPosWorld = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
-
-            Vector2 touchPosWorld2D = new Vector2(touchPosWorld.x, touchPosWorld.y);
-
-            //We now raycast with this information. If we have hit something we can process it.
-            RaycastHit2D hitInformation = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
-
-            if (hitInformation.collider != null)
-            {
-                //We should have hit something with a 2D Physics collider!
-                GameObject touchedObject = hitInformation.transform.gameObject;
-                //touchedObject should be the object someone touched.
-                Debug.Log("Touched " + touchedObject.transform.name);
-            }
-
-
-            if (transform.rotation.eulerAngles.z > 90 ||
-                transform.rotation.eulerAngles.z < -90 ||
-                transform.rotation.eulerAngles.x > 90 ||
-                transform.rotation.eulerAngles.x < -90)
-            {
-                Debug.Log("Rotated");
-            }
+            particles.GetComponent<ParticleSystem>().enableEmission = true;
+            Debug.Log(true);
         }
+        else
+        {
+            particles.GetComponent<ParticleSystem>().enableEmission = false;
+            Debug.Log(false);
+        }
+
     }
 }
