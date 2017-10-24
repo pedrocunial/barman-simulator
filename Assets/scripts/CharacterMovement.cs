@@ -10,17 +10,27 @@ public class CharacterMovement : MonoBehaviour
 	public float maxDistance;
 	public float goTime;
 	public float leaveTime;
-	public GameObject finalObjective;
-	public GameObject door;
 
 	// the infamous brazilian gambiarra
 	private bool actionEnded;
+	private bool idleState;
 	private float timer;
 	private Vector3 originalPosition;
 	private Vector3 doorPosition;
+	private Animator anim;
+	//	private WalkIdleAnimation anim;
 
-	private readonly float TOLERABLE_DISTANCE = 0.01f;
+	private readonly float TOLERABLE_DISTANCE = 0.1f;
 
+	private void walk ()
+	{
+		anim.Play ("Basic_Walk_02");
+	}
+
+	private void idle ()
+	{
+		anim.Play ("Idle");
+	}
 
 	// Use this for initialization
 	void Start ()
@@ -29,6 +39,8 @@ public class CharacterMovement : MonoBehaviour
 		originalPosition = transform.position;
 		actionEnded = false;
 		doorPosition = door.transform.position;
+		anim = GetComponent <Animator> ();
+		idleState = true;
 	}
 	
 	// Update is called once per frame
@@ -59,6 +71,10 @@ public class CharacterMovement : MonoBehaviour
 
 	private void goBack ()
 	{
+		if (idleState) {
+			idleState = false;
+			anim.SetTrigger ();
+		}
 		// move back from the bar
 		float originalDistance = Vector3.Distance (
 			                         transform.position,
@@ -76,6 +92,8 @@ public class CharacterMovement : MonoBehaviour
 				transform.position.z + speed
 			);
 		} else {
+			anim.Idle ();
+			idleState = true;
 			Debug.Log ("Done drinking!");
 			actionEnded = true;
 		}
@@ -83,6 +101,10 @@ public class CharacterMovement : MonoBehaviour
 
 	private void goToBar ()
 	{
+		if (idleState) {
+			idleState = false;
+	
+		}
 		float distance = absDistance (transform.position,
 			                 finalObjective.transform.position);
 
@@ -93,6 +115,9 @@ public class CharacterMovement : MonoBehaviour
 				transform.position.y,
 				transform.position.z + speed
 			);
+		} else {
+			anim.Idle ();
+			idleState = true;
 		}
 	}
 
@@ -103,7 +128,10 @@ public class CharacterMovement : MonoBehaviour
 
 	private void leaveBar ()
 	{
-		Debug.Log ("Leaving the bar");
+		if (idleState) {
+			Debug.Log ("Leaving the bar");
+			idleState = false;
+		}
 		// leave the bar (go to the door)
 		transform.position = Vector3.MoveTowards (transform.position,
 			doorPosition, absFloat (speed) * Time.deltaTime * 100);

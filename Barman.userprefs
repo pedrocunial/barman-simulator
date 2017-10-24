@@ -6,7 +6,9 @@
       <File FileName="Assets\scripts\ThrowObjectWithScore.cs" Line="1" Column="1" />
       <File FileName="Assets\SteamVR\InteractionSystem\Core\Scripts\Throwable.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\MyVideoPlayer.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\CharacterMovement.cs" Line="109" Column="57" />
+      <File FileName="Assets\scripts\CharacterMovement.cs" Line="32" Column="19" />
+      <File FileName="Assets\scripts\WalkIdleAnimation.cs" Line="9" Column="1" />
+      <File FileName="Assets\MoveMotionPack\SampleScene\Scripts\PlayManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
